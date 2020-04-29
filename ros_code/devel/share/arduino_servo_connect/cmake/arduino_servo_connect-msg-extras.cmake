@@ -1,0 +1,2 @@
+set(arduino_servo_connect_MESSAGE_FILES "/home/bingo/face_tracker/ros_code/src/arduino_servo_connect/msg/MoveServo.msg")
+set(arduino_servo_connect_SERVICE_FILES "/home/bingo/face_tracker/ros_code/src/arduino_servo_connect/srv/ServoRead.srv;/home/bingo/face_tracker/ros_code/src/arduino_servo_connect/srv/ServoWrite.srv;/home/bingo/face_tracker/ros_code/src/arduino_servo_connect/srv/ServoEnable.srv;/home/bingo/face_tracker/ros_code/src/arduino_servo_connect/srv/GetAllServoPos.srv;/home/bingo/face_tracker/ros_code/src/arduino_servo_connect/srv/GetAllServoEnable.srv")

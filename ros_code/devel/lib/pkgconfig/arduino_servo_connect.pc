@@ -1,0 +1,8 @@
+prefix=/home/bingo/face_tracker/ros_code/devel
+
+Name: arduino_servo_connect
+Description: Description of arduino_servo_connect
+Version: 0.0.0
+Cflags: -I/home/bingo/face_tracker/ros_code/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

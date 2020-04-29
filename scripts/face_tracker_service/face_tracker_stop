@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Description: Stop face tracker ros node.
+# History:
+
+
+source /opt/ros/kinetic/setup.bash
+
+pid=`ps -ef|grep face_tracker_bringup|grep -v grep|awk '{print $2}'`
+if [ -n "$pid" ]
+then
+    rosnode kill /arduino_servo_node
+    rosnode kill /face_location_node
+
+    echo "kill face_tracker_bringup pid:" $pid
+    kill -9 $pid
+fi
+
+exit 0

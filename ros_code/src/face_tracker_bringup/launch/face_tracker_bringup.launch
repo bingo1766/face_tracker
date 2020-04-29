@@ -1,0 +1,25 @@
+<!--
+  Description:该启动文件是基于arduino和舵机的人脸跟踪项目的启动文件,只要运行该文件即可
+    启动所有必须的节点.使整个人脸跟踪系统进入到正常工作状态,在这里可以设置一些全局参数.
+    例如连接的舵机的引脚位置,控制舵机转动的话题名称.
+-->
+<launch>
+  <!-- Global param define here -->
+  <arg name="SERVO_X_ID" default="3" doc="control left and right move servo id" />
+  <arg name="SERVO_Y_ID" default="4" doc="control up and down move servo id" />
+  <arg name="MOVE_SERVO_TOPIC" default="/arduino_servo_node/moveServoTopic" doc="move servo topic" />
+
+  <!-- startup arduino control servo node -->
+  <include file="$(find arduino_servo_connect)/launch/arduino_servo_connect.launch" >
+    <arg name="SERVO_X_ID" value="$(arg SERVO_X_ID)" />
+    <arg name="SERVO_Y_ID" value="$(arg SERVO_Y_ID)" />
+    <arg name="MOVE_SERVO_TOPIC" value="$(arg MOVE_SERVO_TOPIC)" />
+  </include>
+
+  <!-- startup face location node -->
+  <include file="$(find face_location_tracker)/launch/face_location_tracker.launch" >
+    <arg name="SERVO_X_ID" value="$(arg SERVO_X_ID)" />
+    <arg name="SERVO_Y_ID" value="$(arg SERVO_Y_ID)" />
+    <arg name="MOVE_SERVO_TOPIC" value="$(arg MOVE_SERVO_TOPIC)" />
+  </include>
+</launch>

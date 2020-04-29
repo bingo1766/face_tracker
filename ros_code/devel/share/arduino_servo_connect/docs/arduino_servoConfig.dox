@@ -1,0 +1,9 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~firmware_pub_rate" : \b [double] pub arduino firmware ver rate min: 0.01, default: 0.1, max: 1.0
+- \b "~default_x_deg" : \b [int] servo x default degree min: 0, default: 90, max: 180
+- \b "~default_y_deg" : \b [int] servo y default degree min: 0, default: 0, max: 180
+- \b "~servo_move_delay" : \b [int] when exit move servo delay min: 0, default: 60, max: 150
+

@@ -1,0 +1,10 @@
+\subsubsection usage Usage
+\verbatim
+<node name="arduino_dynamic_reconfig" pkg="arduino_servo_connect" type="arduino_dynamic_reconfig">
+  <param name="firmware_pub_rate" type="double" value="0.1" />
+  <param name="default_x_deg" type="int" value="90" />
+  <param name="default_y_deg" type="int" value="0" />
+  <param name="servo_move_delay" type="int" value="60" />
+</node>
+\endverbatim
+

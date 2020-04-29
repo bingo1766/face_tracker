@@ -1,0 +1,17 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~def_servo_x_min" : \b [int] default servo x min deg min: 0, default: 0, max: 180
+- \b "~def_servo_x_max" : \b [int] default servo x max deg min: 0, default: 180, max: 180
+- \b "~def_servo_y_min" : \b [int] default servo y min deg min: 0, default: 0, max: 180
+- \b "~def_servo_y_max" : \b [int] default servo y max deg min: 0, default: 90, max: 180
+- \b "~def_servo_move_step" : \b [int] servo default move step(degree) min: 1, default: 1, max: 5
+- \b "~face_tracker_move_delay" : \b [int] servo default move delay(ms) min: 0, default: 0, max: 60
+- \b "~def_image_center_x" : \b [int] location face center x min: 160, default: 320, max: 480
+- \b "~def_image_center_y" : \b [int] location face center y min: 120, default: 240, max: 360
+- \b "~def_check_tolerance" : \b [int] location face tolerance min: 40, default: 65, max: 100
+- \b "~face_detect_timeout" : \b [double] detect timeout will move org deg min: 0.5, default: 3.0, max: 10.0
+- \b "~topic_move_servo" : \b [bool] If move servo by topic or service min: False, default: True, max: True
+- \b "~face_tracker_speed" : \b [int] face tracker speed(bigger->faster) min: 1, default: 5, max: 10
+

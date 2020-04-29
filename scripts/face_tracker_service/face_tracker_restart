@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+# Description: when restart face tracker node, this bash file should
+#  be executed.
+
+
+/usr/sbin/face_tracker_stop
+sleep 3
+/usr/sbin/face_tracker_start
+
+exit 0

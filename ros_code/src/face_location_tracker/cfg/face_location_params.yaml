@@ -1,0 +1,44 @@
+###################################################################
+# Description:
+#   该配置文件是人脸识别定位所需,可以配置的参数包括如下：
+#   default_servo_x_min:横向移动舵机的默认最小角度
+#   default_servo_x_max:横向移动舵机的默认最大角度
+#   default_servo_y_min:上下移动舵机的默认最小角度
+#   default_servo_y_max:上下移动舵机的默认最大角度
+#   default_servo_x_deg:横向舵机的默认初始角度
+#   default_servo_y_deg:纵向移动舵机的默认初始角度
+#   default_servo_move_step:设置舵机移动的步进大小,这里默认1度
+#   face_tracker_move_delay:舵机在移动时默认的延迟时间,这里为0,单位ms.
+#   default_image_center_x:设置需要让人脸保持中心的横向坐标.
+#   default_image_center_y:设置需要让人脸保持中心的纵向坐标.
+#   default_check_tolerance:在进行人脸检测时有个容错范围,不是移动
+#       一点就开始移动舵机,必须等人脸位置超过这个区间再移动舵机.
+#   face_detect_timeout:检测人脸的超时时间,当超过该时间就会移动
+#       舵机到默认的初始位置.
+#   topic_move_servo:是否通过话题来控制移动舵机,false的话就使用
+#       service的方式来控制舵机移动.
+#   face_tracker_speed:控制舵机移动跟踪人脸的速度,该值越大跟踪的
+#       速度越快，但是人脸会容易跟踪丢失.该值越小舵机移动速度变慢,
+#       但是人脸不容易跟踪丢.该值取值范围[0, 10].
+###################################################################
+camera_id: 1
+default_servo_x_min: 0
+default_servo_x_max: 180
+default_servo_y_min: 0
+default_servo_y_max: 90
+
+default_servo_x_deg: 90
+default_servo_y_deg: 0
+
+default_servo_move_step: 1
+face_traker_move_delay: 60
+
+default_image_center_x: 320
+default_image_center_y: 240
+#default_default_check_tolerance: 65
+default_check_tolerance: 40
+face_detect_timeout: 3.0
+
+topic_move_servo: true
+#default_face_tracker_speed: 5
+face_tracker_speed: 3

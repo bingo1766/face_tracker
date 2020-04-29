@@ -1,0 +1,2 @@
+arduino_servo_connect:face_location_tracker:face_tracker_bringup
+-DCATKIN_DEVEL_PREFIX=/home/bingo/face_tracker/ros_code/devel -DCMAKE_INSTALL_PREFIX=/home/bingo/face_tracker/ros_code/install -G Unix Makefiles

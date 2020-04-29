@@ -1,0 +1,25 @@
+<!--
+  Description:
+    连接arduino,这样才能控制舵机移动.同时加载一些连接arduino的配置参数,
+    连接舵机的一些参数.
+
+-->
+<launch>
+  <arg name="SERVO_X_ID" default="3" />
+  <arg name="SERVO_Y_ID" default="4" />
+  <arg name="MOVE_SERVO_TOPIC" default="/arduino_servo_node/moveServoTopic" />
+  <arg name="FIRMWARE_VER_TOPIC" default="/arduino_servo_node/firmwareVersionTopic"/>
+
+  <!-- startup arduino servo node dynamic reconfigure server -->
+  <node name="arduino_dynamic_reconfig" pkg="arduino_servo_connect" type="dynamic_server.py" output="screen" />
+
+  <!-- startup arduino servo connect node -->
+  <node name="arduino_servo_node" pkg="arduino_servo_connect" type="arduino_node.py" output="screen">
+    <rosparam file="$(find arduino_servo_connect)/cfg/config_params.yaml" command="load"/>
+
+    <param name="servo_x_id" value="$(arg SERVO_X_ID)" />
+    <param name="servo_y_id" value="$(arg SERVO_Y_ID)" />
+    <param name="move_servo_topic" value="$(arg MOVE_SERVO_TOPIC)" />
+    <param name="firmware_version_topic" value="$(arg FIRMWARE_VER_TOPIC)" />
+  </node>
+</launch>

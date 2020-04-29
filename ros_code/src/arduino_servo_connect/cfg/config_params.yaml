@@ -1,0 +1,19 @@
+##################################################################################
+
+# Description:配置连接的arduino的参数,包括arduino端口号,波特率,连接超时时间等.
+#   port: arduino控制板的端口号.
+#   baud: 连接arduino的串口波特率.
+#   timeout: 串口读取数据时超时时间.
+#   servo_move_delay: 断开arduino连接时,舵机复位时移动的延时,单位ms.
+#   version_pub_rate: arduino控制舵机移动的固件代码版本通过话题发布的频率.
+#   default_x_deg: 当停止节点时默认横向舵机停止的角度位置.
+#   default_y_deg: 当停止节点是纵向舵机恢复初始位置的角度.
+
+###################################################################################
+port: /dev/ttyUSB0
+baud: 57600
+timeout: 0.5
+servo_move_delay: 60
+version_pub_rate: 0.1
+default_x_deg: 90
+default_y_deg: 0

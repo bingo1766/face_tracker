@@ -1,0 +1,23 @@
+<!--
+  Description:
+    使用普通USB摄像头来进行人脸检测识别并跟踪人脸位置,然后使用控制舵机移动的service,来
+    使人脸始终在画面中心.启动该节点时需要加载位于cfg目录下的face_location_params.yaml
+    配置文件,该文件是节点运行需要配置的一些参数.
+-->
+<launch>
+  <arg name="SERVO_X_ID" default="3" />
+  <arg name="SERVO_Y_ID" default="4" />
+  <arg name="MOVE_SERVO_TOPIC" default="/arduino_servo_node/moveServoTopic" />
+
+  <!-- startup dynamic_reconfigure server node -->
+  <node name="face_dynamic_reconfig" pkg="face_location_tracker" type="dynamic_server.py" output="screen" />
+
+  <!-- startup face location node -->
+  <node name="face_location_node" pkg="face_location_tracker" type="face_location.py" output="screen">
+    <rosparam file="$(find face_location_tracker)/cfg/face_location_params.yaml" command="load" />
+
+    <param name="servo_x_id" value="$(arg SERVO_X_ID)" />
+    <param name="servo_y_id" value="$(arg SERVO_Y_ID)" />
+    <param name="move_servo_topic" value="$(arg MOVE_SERVO_TOPIC)" />
+  </node>
+</launch>

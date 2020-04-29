@@ -1,0 +1,8 @@
+prefix=/home/bingo/face_tracker/ros_code/install
+
+Name: face_location_tracker
+Description: Description of face_location_tracker
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

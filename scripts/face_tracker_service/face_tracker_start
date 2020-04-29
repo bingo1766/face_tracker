@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+# Description: when poweron auto launch face tracker node.
+
+
+source /opt/ros/kinetic/setup.bash
+source /home/bingo/face_tracker/ros_code/devel/setup.bash
+
+roslaunch face_tracker_bringup face_tracker_bringup.launch
+
+exit 0

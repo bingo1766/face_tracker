@@ -1,0 +1,13 @@
+[Unit]
+Description=power on startup face tracker ros node 
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+ExecStart=/usr/sbin/face_tracker_start
+ExecStop=/usr/sbin/face_tracker_stop
+ExecRestart=/usr/sbin/face_tracker_restart
+
+[Install]
+WantedBy=multi-user.target
